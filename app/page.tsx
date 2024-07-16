@@ -11,9 +11,14 @@ async function getUserDetails() {
 const Home = async () => {
     const userDetails = await getUserDetails();
     return (
-        <div>
-            {userDetails.name}
-            {userDetails.email}
+        <div className="flex flex-col justify-center h-screen">
+            <div className="flex justify-center">
+                <div className="border p-8 rounded">
+                    <div>Name: {userDetails?.name}</div>
+
+                    {userDetails?.email}
+                </div>
+            </div>
         </div>
     );
 };
