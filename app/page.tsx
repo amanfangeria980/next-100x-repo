@@ -1,12 +1,10 @@
-import axios from "axios";
 import React from "react";
+import { PrismaClient } from "@prisma/client";
+const client = new PrismaClient();
 
 async function getUserDetails() {
-    // await new Promise((resolve) => setTimeout(resolve, 5000)).then(() => {
-    //     console.log("5 seconds passed");
-    // });
-    const response = await axios.get("http://localhost:3000/api/user");
-    return response.data;
+    const user = await client.user.findFirst();
+    return { name: user?.username, password: user?.password };
 }
 
 const Home = async () => {
