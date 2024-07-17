@@ -14,7 +14,7 @@ const Home = async () => {
                 <div className="border p-8 rounded">
                     <div>Name: {userDetails?.name}</div>
 
-                    {userDetails?.email}
+                    <div>Password: {userDetails?.password}</div>
                 </div>
             </div>
         </div>
